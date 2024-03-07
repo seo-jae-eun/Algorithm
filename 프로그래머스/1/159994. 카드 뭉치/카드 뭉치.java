@@ -2,7 +2,6 @@ import java.util.*;
 
 class Solution {
     public String solution(String[] cards1, String[] cards2, String[] goal) {
-        String answer = "";
         Queue<String> c1 = new LinkedList<>();
         Queue<String> c2 = new LinkedList<>();
         
@@ -16,11 +15,9 @@ class Solution {
         for(int i = 0; i < goal.length; i++) {
             if(goal[i].equals(c1.peek())) {
                 c1.remove();
-                answer = "Yes";
             }
             else if(goal[i].equals(c2.peek())) {
                 c2.remove();
-                answer = "Yes";
             }
             else {
                 return "No";
@@ -28,6 +25,6 @@ class Solution {
             
             
         }
-        return answer;
+        return "Yes";
     }
 }
