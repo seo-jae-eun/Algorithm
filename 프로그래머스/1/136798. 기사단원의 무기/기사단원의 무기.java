@@ -1,33 +1,20 @@
 class Solution {
-    public int solution(int number, int limit, int power) {
-        int answer = 0;
-        // int[] factors = new int[number];
-        
-        for(int i = 1; i <= number; i++) {
-            int cnt = 0;
-            for(int j = 1; j * j <= i; j++) {
-                if(j * j == i) {
-                    cnt++;
-                }
-                else if(i % j == 0) {
-                    cnt += 2;
-                }
-            }
-            if(cnt > limit) { // 제한수치를 초과한 기사
-                answer += power;
-            }
-            else {
-                answer += cnt;
-            }
-            
-        }
-        // for(int k = 0; k < factors.length; k++) {
-        //     if(factors[k] > limit) { // 제한수치를 초과한 기사
-        //         factors[k] = power;
-        //     }
-        //     answer += factors[k];
-        // }
 
+    public int solution(int number, int limit, int power) {
+        int[] count = new int[number + 1];    
+        for (int i = 1; i <= number; i++) {
+            for (int j = 1; j <= number / i; j++) {
+                count[i * j]++;
+            }
+        }
+        int answer = 0;
+        for (int i = 1; i <= number; i++) {
+            if (count[i] > limit) {
+                answer += power;
+            } else {
+                answer += count[i];
+            }
+        }
         return answer;
     }
 }
