@@ -1,7 +1,7 @@
 class Solution {
     public int solution(int number, int limit, int power) {
         int answer = 0;
-        int[] factors = new int[number];
+        // int[] factors = new int[number];
         
         for(int i = 1; i <= number; i++) {
             int cnt = 0;
@@ -13,14 +13,20 @@ class Solution {
                     cnt += 2;
                 }
             }
-            factors[i - 1] = cnt;
-        }
-        for(int k = 0; k < factors.length; k++) {
-            if(factors[k] > limit) { // 제한수치를 초과한 기사
-                factors[k] = power;
+            if(cnt > limit) { // 제한수치를 초과한 기사
+                answer += power;
             }
-            answer += factors[k];
+            else {
+                answer += cnt;
+            }
+            
         }
+        // for(int k = 0; k < factors.length; k++) {
+        //     if(factors[k] > limit) { // 제한수치를 초과한 기사
+        //         factors[k] = power;
+        //     }
+        //     answer += factors[k];
+        // }
 
         return answer;
     }
