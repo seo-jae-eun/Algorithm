@@ -5,16 +5,16 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         int N = sc.nextInt();
-        int[] plus = new int[N];
+        int[] sum = new int[N];
 
         for(int i = 0; i < N; i++) {
         	int A = sc.nextInt();
         	int B = sc.nextInt();
         	
-        	plus[i] = A + B;
+        	sum[i] = A + B;
         }
-        for(int i = 0; i < N; i++) {
-        	System.out.println(plus[i]);
+        for(int n : sum) {
+        	System.out.println(n);
         }
 	}
 }
