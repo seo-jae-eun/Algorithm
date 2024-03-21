@@ -12,9 +12,7 @@ public class Main {
 	    if(m > 59) {
 	    	h = h + (m / 60);
 	    	m = m % 60;
-		    if(h > 23) {
-		    	h = h % 24;
-		    }
+		    if(h > 23) h = h % 24;
 	    }
 	    
 	    System.out.println(h + " " + m);
