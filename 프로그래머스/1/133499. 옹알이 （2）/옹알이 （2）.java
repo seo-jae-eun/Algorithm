@@ -1,21 +1,23 @@
 class Solution {
-    public int solution(String[] babblings) {
-        // "aya", "ye", "woo", "ma" 4가지 발음만 가능
+    public int solution(String[] babbling) {
         int answer = 0;
-        for(int i = 0; i < babblings.length; i++) {
-            if(babblings[i].contains("ayaaya") || babblings[i].contains("yeye") || babblings[i].contains("woowoo") || babblings[i].contains("mama")) {
+        String[] words = {"aya", "ye", "woo", "ma"};
+        
+        for(int i = 0; i < babbling.length; i++) {
+            if(babbling[i].contains("ayaaya") || babbling[i].contains("yeye") || babbling[i].contains("woowoo") || babbling[i].contains("mama")) {
                 continue;
             }
+            babbling[i] = babbling[i].replace("aya", " ");
+            babbling[i] = babbling[i].replace("ye", " ");
+            babbling[i] = babbling[i].replace("woo", " ");
+            babbling[i] = babbling[i].replace("ma", " ");
+            // babbling[i] = babbling[i].replace(" ", "");
 
-            babblings[i] = babblings[i].replace("aya", " ");
-            babblings[i] = babblings[i].replace("ye", " ");
-            babblings[i] = babblings[i].replace("woo", " ");
-            babblings[i] = babblings[i].replace("ma", " ");
-            babblings[i] = babblings[i].replace(" ", "");
-
-            if(babblings[i].length()  == 0) answer++;
-
+            if(babbling[i].trim().length() == 0) {
+                answer++;
+            }
         }
+        
         return answer;
     }
 }
