@@ -1,4 +1,7 @@
 # [level 2] NULL 처리하기 - 59410 
+---
+SELECT IFNULL(Column명, "Null일 경우 대체 값") FROM 테이블명; 
+---
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59410) 
 
