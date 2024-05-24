@@ -1,7 +1,9 @@
 # [level 2] 중복 제거하기 - 59408 
 
 ### 테이블에서 필드에 대해 중복제외하여 출력
+```
 SELECT DISTINCT 필드 FROM 테이블
+```
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59408) 
 
